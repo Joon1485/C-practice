@@ -32,6 +32,6 @@ int main()
 	Point p;
 	ColorPoint cp;
 	cp.set(3, 4);
-	cp.setColor("Red");
+	cp.setColor("RED");
 	cp.showColorPoint();
 }
