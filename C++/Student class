@@ -1,0 +1,67 @@
+#include <iostream>
+#include <string>
+#include <time.h>
+using namespace std;
+
+class Student
+{
+	string name;
+	int kor;
+	int eng;
+	int math;
+public:
+	Student(string name)
+	{
+		this->name = name;
+		startStats();
+	}
+	Student(string name, int kor, int eng, int math)
+	{
+		this->name = name;
+		this->kor = kor;
+		this->eng = eng;
+		this->math = math;
+	}
+	void startStats();
+	void study();
+	void info();
+};
+void Student::startStats()
+{
+	kor = rand() % 31;
+	eng = rand() % 31;
+	math = rand() % 31;
+}
+void Student::study()
+{
+	if (kor <= 98) kor += 2;
+	if (eng <= 98) eng += 2;
+	if (math <= 98) math += 2;
+}
+void Student::info()
+{
+	cout << "이름 : " << name << endl;
+	cout << "언어력 : " << kor << endl;
+	cout << "영어력 : " << eng << endl;
+	cout << "수학력 : " << math << endl;
+}
+
+class CollegeStudent : public Student
+{
+	int general;
+	int major;
+	int hp;
+public:
+	CollegeStudent(string name)
+	{
+		this->name = name;
+	}
+};
+
+
+int main()
+{
+	srand(time(NULL));
+	Student st("hehe");
+
+}
