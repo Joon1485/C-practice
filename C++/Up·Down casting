@@ -30,12 +30,12 @@ int main()
 {
 	ColorPoint cp;
 	ColorPoint* pDer = &cp;
-	Point* pBase = pDer; //Up casting
+	Point* pBase = pDer; //up casting
 
 	pBase->set(3, 4);
 	pDer->showPoint();
 
-	pDer = (ColorPoint*)pBase; // Down casting
+	pDer = (ColorPoint*)pBase; // down casting
 	pDer->setColor("RED");
 	pDer->showColorPoint();
 }
