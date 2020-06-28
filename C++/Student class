@@ -48,11 +48,11 @@ void Student::info()
 
 class CollegeStudent : public Student
 {
-	int general;
+	int general = 5;
 	int major;
 	int hp;
 public:
-	CollegeStudent(string name)
+	CollegeStudent(string name) : Student(name)
 	{
 		this->name = name;
 	}
