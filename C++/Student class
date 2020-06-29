@@ -48,16 +48,57 @@ void Student::info()
 
 class CollegeStudent : public Student
 {
-	int general = 5;
+	int general;
 	int major;
 	int hp;
 public:
 	CollegeStudent(string name) : Student(name)
 	{
-		this->name = name;
+		startStats();
 	}
-};
+	CollegeStudent(string name, int kor, int eng, int math)
+	{
 
+	}
+	CollegeStudent(string name, int kor, int eng, int math,
+		int general, int major, int hp)
+	{
+
+	}
+	void study();
+	void report();
+	void rest();
+};
+void CollegeStudent::study()
+{
+	if (general <= 98) general += 2;
+	if (major <= 98) major += 2;
+}
+void CollegeStudent::report()
+{
+	general += 5; major += 5;
+	if (hp < 5) cout << "수행불가";
+	else hp -= 5;
+}
+void CollegeStudent::rest()
+{
+	if (general > 0) general -= 1;
+	if (major > 0) major -= 1;
+}
+class GraduateStudent : public CollegeStudent
+{
+	int present;
+public:
+	GraduateStudent(string name) : CollegeStudent(name)
+	{
+		startStats();
+	}
+	void presentation();
+};
+void GraduateStudent::presentation()
+{
+	present += 5; hp -= 5;
+}
 
 int main()
 {
