@@ -11,22 +11,11 @@ private:
 public:
 	Time() : h(0), m(0), s(0) { }
 
-	Time(int h, int m, int s) 
-	{
-		this->h = h;
-		this->m = m;
-		this->s = s;
-	}
-	Time(int m, int s) : h(0) 
-	{
-		this->m = m;
-		this->s = s;
-	}
+	Time(int s_) : h(0), m(0) { s = s_; }
 
-	Time(int s) : h(0), m(0)
-	{
-		this->s = s;
-	}
+	Time(int m_, int s_) : h(0) { m = m_, s = s_; }
+
+	Time(int h_, int m_, int s_) { h = h_, m = m_, s = s_; }
 	void showTime()
 	{
 		cout << "입력된 시간은 " << h << "시 " << m << "분 "
