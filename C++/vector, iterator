@@ -1,0 +1,77 @@
+#include <iostream>
+#include <string>
+#include <vector>
+#include <algorithm>
+
+#include "Well512Random.h"
+
+using namespace std;
+
+class Student
+{
+public:
+    virtual void Study()
+    {
+        kor += 2;
+        if (kor >= 100)
+            kor = 100;
+
+        math += 2;
+        if (math >= 100)
+            math = 100;
+
+        eng += 2;
+        if (eng >= 100)
+            eng = 100;
+    }
+
+    void Info()
+    {
+        cout << "학생 이름 : " << mName << endl;
+        cout << "언어력 : " << kor << endl;
+        cout << "영어력 : " <<eng << endl;
+        cout << "수학력 : " << math << endl;
+    }
+
+public:
+    string GetName()
+    {
+        return mName;
+    }
+
+public:
+    Student(string name, int koraen,
+        int english, int math)
+    {
+        mName = name;
+        kor = koraen;
+        eng = english;
+        math = math;
+    }
+
+    Student(string name)
+    {
+        mName = name;
+
+
+        kor = (Well512Random::Instance().GetValue(0, 30));
+        eng = (Well512Random::Instance().GetValue(0, 30));
+        math = (Well512Random::Instance().GetValue(0, 30));
+    }
+    Student()
+    {
+
+    }
+
+    ~Student()
+    {
+
+    }
+
+protected:
+    string mName;
+    int kor;
+    int eng;
+    int math;
+
+};
