@@ -1,0 +1,51 @@
+#include <iostream>
+
+using namespace std;
+
+class Time
+{
+private:
+	int h; 
+	int m; 
+	int s;
+public:
+	Time() : h(0), m(0), s(0) { }
+
+	Time(int h, int m, int s) 
+	{
+		this->h = h;
+		this->m = m;
+		this->s = s;
+	}
+	Time(int m, int s) : h(0) 
+	{
+		this->m = m;
+		this->s = s;
+	}
+
+	Time(int s) : h(0), m(0)
+	{
+		this->s = s;
+	}
+	void showTime()
+	{
+		cout << "입력된 시간은 " << h << "시 " << m << "분 "
+			<< s << "초 입니다." << endl;
+	}
+};
+
+
+int main()
+{
+	Time t1;
+	Time t2(5);
+	Time t3(3, 16);
+	Time t4(2, 56, 23);
+
+	t1.showTime();
+	t2.showTime();
+	t3.showTime();
+	t4.showTime();
+
+	return 0;
+}
